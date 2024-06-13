@@ -128,15 +128,15 @@ class Template(threading.Thread):
             exit(1)
         return path
 
-    def get_path(self, name):
-        self.log_update("Getting Path For {0}".format(name))
-        files = glob(os.path.join(self.workspace, "**", name), recursive=True)
-        if len(files):
-            return files[0]
-        else:
-            self.logger.error("File Not Found " + name)
-            self.error = self.error + "File Not Found " + name
-            exit(1)
+    # def get_path(self, name):
+    #     self.log_update("Getting Path For {0}".format(name))
+    #     files = glob(os.path.join(self.workspace, "**", name), recursive=True)
+    #     if len(files):
+    #         return files[0]
+    #     else:
+    #         self.logger.error("File Not Found " + name)
+    #         self.error = self.error + "File Not Found " + name
+    #         exit(1)
 
     @staticmethod
     def setup_logger(name, log_file, level=logging.INFO):
